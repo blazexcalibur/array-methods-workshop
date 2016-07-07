@@ -64,20 +64,69 @@ function tru(value) {
 //You should use Array.prototype.reduce to do your work.
 //Hint: You can use String.prototype.split to split the string into an array of words.
 
-    var phrase = "which one of these words isssssss the longest?";
-    var words = phrase.split(" ");
-    var longestWord = words.reduce(function longestWord(firstWord, secondWord) {
-        if (firstWord.length < secondWord.length) {
-            return secondWord;
-        }
-        return  firstWord;
-    }, "");
+var phrase = "which one of these words isssssss the longest?";
+var words = phrase.split(" ");
+var longestWord = words.reduce(function longestWord(firstWord, secondWord) {
+    if (firstWord.length < secondWord.length) {
+        return secondWord;
+    }
+    return firstWord;
+}, "");
 
-
-console.log(longestWord);
-
+//console.log(longestWord);
 
 /*
-var words = phrase.split(" ");
-console.log(words);
+Exercise 5
+Write a function called countVowels that takes a string and returns the number of vowels in the string. 
+You should use Array.prototype.reduce to do your work.
+Hint: You can use String.prototype.split again. There is a way to use it to split a string by character. Try to Google it :)
+Hint 2: You can create an array of vowels and use Array.prototype.indexOf to check if the current letter is a vowel.
 */
+
+
+var phraseArray = phrase.split("");
+
+var vowels = phraseArray.reduce(function countVowels(totalV, letter) {
+            var listOfVowels = ["a", "e", "i", "o", "u"];
+
+            if (listOfVowels.indexOf(letter) > -1) {
+                return totalV + 1;
+            }
+            return totalV;
+        /*
+        if (letter === "a"||letter === "e"||letter === "i"||letter === "o"||letter === "u"){
+            return totalV += 1 ;
+        } 
+        return totalV;
+        */
+    },0);
+
+//console.log(vowels);
+
+/*
+Exercise 6
+Write a function called highLow that takes an array of numbers, and returns an object with a property highest containing the highest number, 
+and a property lowest containing the lowest number, using Array.prototype.reduce.
+For example, starting with [1, -10, 20, 40, 5], your function should return {highest: 40, lowest: -10}.
+Hint: Javascript has a special value called Infinity, which is higher than any other number. 
+See if you can initialize your reduce accumulator with Infinity and -Infinity :)
+*/
+
+
+var highest = listOfNumbers.reduce(function countVowels(highLowCount, num ) {
+    
+    if (num > highLowCount.high) {
+        highLowCount.high = num;
+    }
+    
+    if (num < highLowCount.low) {
+        highLowCount.low = num;
+    }
+    return highLowCount;
+}, {high: -Infinity, low: Infinity});
+
+console.log(highest);
+
+
+//console.log(phrase.split(""));
+
