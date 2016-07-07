@@ -11,3 +11,16 @@ function printPositives(num) {
 }
     
 listOfNumbers.forEach(printPositives);
+
+//Exercise 2
+//Similar to the previous exercise, write a function called getPositives that takes an array
+//and uses the filter method to return a new array with only the positive numbers.
+
+function getPositives(num) {
+    if (num >0){
+        return num;
+    }
+}
+
+var listOfPositiveNumbers = listOfNumbers.filter(getPositives);
+//console.log(listOfPositiveNumbers);
