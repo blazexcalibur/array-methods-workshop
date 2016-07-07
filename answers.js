@@ -56,11 +56,28 @@ function tru(value) {
     }
 }
 
-var listOfPositiveNumbers = filterArray(listOfNumbers, tru);
-console.log(listOfPositiveNumbers);
+//var listOfPositiveNumbers = filterArray(listOfNumbers, tru);
+//console.log(listOfPositiveNumbers);
 
 //Exercise 4
 //Write a function called longestWord that takes a string as argument, and returns the longest word in the string. 
 //You should use Array.prototype.reduce to do your work.
 //Hint: You can use String.prototype.split to split the string into an array of words.
 
+    var phrase = "which one of these words isssssss the longest?";
+    var words = phrase.split(" ");
+    var longestWord = words.reduce(function longestWord(firstWord, secondWord) {
+        if (firstWord.length < secondWord.length) {
+            return secondWord;
+        }
+        return  firstWord;
+    }, "");
+
+
+console.log(longestWord);
+
+
+/*
+var words = phrase.split(" ");
+console.log(words);
+*/
