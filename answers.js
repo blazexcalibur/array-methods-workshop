@@ -239,5 +239,20 @@ function peopleId(arr) {
     return browse;
 }
 
-console.log(peopleId(personaldata));
+//console.log(peopleId(personaldata));
 
+//Exercise 10
+
+function peopleId(arr) {
+    var contact = arr.reduce( function(person, personobj){
+        if (!person[personobj.firstName]) {
+            person[personobj.firstName] = [];
+            person[personobj.firstName].push(personobj)
+        } else {
+            person[personobj.firstName]push(personobj)
+        }
+        return person;
+    },{});
+}
+
+console.log(peopleId(personaldata));
